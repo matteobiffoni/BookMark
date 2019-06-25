@@ -17,9 +17,18 @@
   <p style="padding: 15px; text-align: left; font-size: 2em; line-height: 1.1;">
     <%= @book.plot %>
   </p>
-
+  <% if !current_user.has_role?(:publisher) %>
+    <% if current_user.books.include?(@book) %>
+      <%= link_to 'Rimuovi dai preferiti', users_remove_from_fav_path(book_param: @book), id: 'add_or_remove_favs' %>
+    <% else %>
+      <%= link_to 'Aggiungi ai preferiti', users_add_to_fav_path(book_param: @book), id: 'add_or_remove_favs' %>
+    <% end %>
+  <% end %>
+  <br />
+  <br />
+  <br />
   <% if @book.writer == current_user %>
     <%= link_to 'Modifica', edit_book_path(@book), id: "book_button_s" %> |
   <% end %>
-  <%= link_to 'Indietro', books_path, id: "book_button_s"%>
+  <%= link_to 'Vai a LIBRI', books_path, id: "book_button_s"%>
 </div>

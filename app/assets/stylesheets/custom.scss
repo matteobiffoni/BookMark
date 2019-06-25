@@ -74,10 +74,14 @@ textarea {
     font-size: 2em;
     color: #fff;
   }
+  #add_or_remove_favs {
+    font-size: 1.5em;
+  }
   #book_button_s {
     font-size: 1.6em;
     margin-left: 15px;
     margin-right: 15px;
+    padding-bottom: 60px;
   }
   .written_books {
     margin-top: 100px;
@@ -93,6 +97,12 @@ textarea {
   }
   .preferred_books {
     margin-top: 50px;
+  }
+  .center_h1 {
+    margin-top: 300px;
+  }
+  #back_fav_info {
+    font-size: 1.3em;
   }
 }
 
@@ -154,6 +164,7 @@ textarea {
   }
   #link {
     font-size: 1.5em;
+    padding-bottom: 60px;
   }
   form {
     #error_explanation {

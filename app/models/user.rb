@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_and_belongs_to_many :books
   after_create :add_user_role
 
+
   private
     def add_user_role
       role = self.user_role
