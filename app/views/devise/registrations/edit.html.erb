@@ -1,0 +1,48 @@
+<div class="overlay">
+  <h1>Modifica profilo</h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <div style="text-align: center;"<%= render "devise/shared/error_messages", resource: resource %></div>
+
+    <div class="field">
+      <%= f.label :name, "Nome" %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autocomplete: "email" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>In attesa di conferma da: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :password %> <i>(lascia il campo vuoto se non intendi cambiare la password)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em>Minimo <%= @minimum_password_length %> caratteri</em>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, "Conferma password" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :current_password, "Password attuale" %> <i>(Abbiamo bisogno della tua password attuale per effettuare i cambiamenti)</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Aggiorna", id: "submit" %>
+    </div>
+  <% end %>
+
+  <%= button_to "Elimina il mio account", registration_path(resource_name), data: { confirm: "Sei sicuro?" }, method: :delete %>
+
+  <%= link_to "Indietro", root_path, id: "link" %>
+</div>

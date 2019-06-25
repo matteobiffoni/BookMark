@@ -1,0 +1,20 @@
+
+<div class="overlay">
+  <h1>
+    Trova il tuo prossimo libro preferito!
+  </h1>
+  <h3>
+    Con BookMark puoi cercare i libri che ti interessano, puoi scoprire informazioni sui tuoi scrittori preferiti e tenere traccia dei libri che hai letto
+  </h3>
+  <p>
+    Inizia subito
+  </p>
+  <% if current_user %>
+    <%= link_to "Continua come #{current_user.name}", books_path, class: "btn btn-primary", id: "mail_holder"%>
+    <%= link_to "Disconnettiti", destroy_user_session_path, class: "btn btn-primary", id: "mail_holder", :method => :delete %>
+  <% else %>
+    <%= link_to "Registrati", new_user_registration_path, class: "btn btn-lg btn-primary", id: "button"%>
+    <br/>
+    <%= link_to "Accedi", new_user_session_path, class: "btn btn-lg btn-primary", id: "button"%>
+  <% end %>
+</div>

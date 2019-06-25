@@ -1,0 +1,25 @@
+<div class="full_page">
+
+  <p style="margin-top: 25px;">
+    <strong style="font-size: 3em;"><%= @book.title %></strong>
+  </p>
+
+  <p>
+    <h2>Autore: <%= @book.writer.name %></h2>
+  <p>
+    <h2>Genere: <%= @book.genre %></h2>
+  </p>
+
+  <p>
+    <h2>Anno di pubblicazione: <%= @book.year %></h2>
+  </p>
+
+  <p style="padding: 15px; text-align: left; font-size: 2em; line-height: 1.1;">
+    <%= @book.plot %>
+  </p>
+
+  <% if @book.writer == current_user %>
+    <%= link_to 'Modifica', edit_book_path(@book), id: "book_button_s" %> |
+  <% end %>
+  <%= link_to 'Indietro', books_path, id: "book_button_s"%>
+</div>
