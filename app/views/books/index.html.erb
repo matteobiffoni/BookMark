@@ -22,7 +22,7 @@
         <% @books.each do |book| %>
           <tr>
             <td><%= book.title %></td>
-            <td><%= book.writer.name %></td>
+            <td><%= link_to "#{book.writer.name}", user_path(id: book.writer.id) %></td>
             <td><%= book.genre %></td>
             <td><%= truncate(book.plot, length: 300) %></td>
             <td><%= book.year %></td>
