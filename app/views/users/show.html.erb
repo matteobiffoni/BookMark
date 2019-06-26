@@ -4,7 +4,7 @@
     <h2>SCRITTORE</h2>
     <div class="bio_section">
       <p class="profile_label">INFORMAZIONI PERSONALI</p>
-      <% if @user.bio.empty? %>
+      <% if !@user.bio || @user.bio.empty? %>
         <p style="font-size: 1.3em;">Non ha ancora inserito le sue informazioni!</p>
         <% if current_user == @user %>
           <%= link_to 'Modifica account', edit_user_registration_path, class: "btn btn-primary" %>
@@ -50,7 +50,7 @@
     <h2>CASA EDITRICE</h2>
     <div class="head_office_section">
       <p class="profile_label">SEDE</p>
-      <% if @user.head_office.empty? %>
+      <% if !@user.head_office || @user.head_office.empty? %>
         <p style="font-size: 1.3em;">Non ha ancora inserito la sua sede!</p>
         <% if current_user == @user %>
           <%= link_to 'Modifica account', edit_user_registration_path, class: "btn btn-primary" %>

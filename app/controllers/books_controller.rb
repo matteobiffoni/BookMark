@@ -6,9 +6,26 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
-  def index
-    @books = Book.all
+  
+# GET /books
+  # GET /books.json
+  #def index
+   # @books = Book.all
+  #end
+
+#per la ricerca parte da qui
+def index
+  @books = if params[:book]
+    Book.where('title LIKE ?', "%#{params[:book]}%") || Book.where('writer LIKE ?', "%#{params[:book]}%")
+  else
+    Book.all
   end
+end
+  
+  def task_params
+    params.require(:task).permit(:name, :complete, :due_date, :term)
+  end
+#finisce qui
 
   # GET /books/1
   # GET /books/1.json

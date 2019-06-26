@@ -1,0 +1,10 @@
+
+
+<div class="full_page">
+  <h1>Campi Ricerca</h1>
+      <tbody>
+    	<%= form_tag(books_path,method: :get) do %>
+  	<%= text_field_tag :book %>
+  	<%= submit_tag 'Search' %>
+  </tbody>
+    <% end %>
