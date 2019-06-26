@@ -86,7 +86,9 @@
           </tbody>
         </table>
       <% end %>
-      <p style="font-size: 1.3em padding-top: 20px;">Per aggiungere gli scrittori, visita i loro profili</p>
+      <% if current_user == @user %>
+        <p style="font-size: 1.3em padding-top: 20px;">Per aggiungere gli scrittori, visita i loro profili</p>
+      <% end %>
     </div>
   <% end %>
   <% if !@user.has_role?(:publisher) %>

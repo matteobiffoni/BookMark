@@ -13,17 +13,17 @@
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-		   <nav>
-				<%= link_to "BookMark", root_path, id: "logo" %>
-		
-       
-		<%= form_tag(users_path,method: :get) do%>
-			<%= text_field_tag :user%>
-			<%= submit_tag 'Cerca', class: "btn btn-primary"  %>
-		<% end %>
+        <nav>
+          <%= link_to "BookMark", root_path, id: "logo" %>
           <% if current_user %>
-            <div class="dropdown pull-right right-nav">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="background-color: transparent; color: #fff;">
+            <div class="dropdown pull-right right-nav inline-divs">
+              <div class="inline-divs">
+                <%= form_tag(users_path, method: :get) do%>
+                  <%= text_field_tag :user%>
+                  <%= submit_tag 'Cerca', class: "btn btn-primary"  %>
+                <% end %>
+              </div>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="background-color: transparent; color: #fff; margin-left: 150px;">
                 <%= current_user.name.upcase %>
                 <span class="caret"/>
               </button>
