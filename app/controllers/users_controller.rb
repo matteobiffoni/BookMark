@@ -1,7 +1,19 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  def index
+#  def index
+#  end
+def index
+  @user = if params[:user]
+    User.where('name LIKE ?', "%#{params[:user]}%") 
+  else
+    User.all
   end
+end
+
+  def task_params
+    params.require(:task).permit(:name, :complete, :due_date, :term)
+  end
+
   def show
     @user = User.find(params[:id])
   end

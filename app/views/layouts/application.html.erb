@@ -13,8 +13,14 @@
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "BookMark", root_path, id: "logo" %>
-        <nav>
+		   <nav>
+				<%= link_to "BookMark", root_path, id: "logo" %>
+		
+       
+		<%= form_tag(users_path,method: :get) do%>
+			<%= text_field_tag :user%>
+			<%= submit_tag 'Cerca', class: "btn btn-primary"  %>
+		<% end %>
           <% if current_user %>
             <div class="dropdown pull-right right-nav">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="background-color: transparent; color: #fff;">
