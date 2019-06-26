@@ -1,11 +1,11 @@
 
 <div class="full_page">
   <h1>Libri</h1>
-  <%= link_to 'Ricerca un libro', books_search_path, class: "btn btn-primary", id: "book_search"%>
   <% if has_role?(:writer) %>
     <%= link_to 'Aggiungi un libro', new_book_path, class: "btn btn-primary", id: "book_add"%>
   <% end %>
   <% if Book.count > 0 %>
+    <%= link_to 'Ricerca un libro', books_search_path, class: "btn btn-primary", id: "book_search"%>
     <table>
       <thead>
         <tr>

@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   has_many :written_books, :class_name => 'Book', :foreign_key => 'writer_id'
   has_and_belongs_to_many :books
+  has_many :writers, class_name: "User", foreign_key: "publisher_id"
+  belongs_to :publisher, class_name: "User", optional: true
   after_create :add_user_role
 
 

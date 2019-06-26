@@ -6,7 +6,7 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
-  
+
 # GET /books
   # GET /books.json
   #def index
@@ -21,7 +21,7 @@ def index
     Book.all
   end
 end
-  
+
   def task_params
     params.require(:task).permit(:name, :complete, :due_date, :term)
   end

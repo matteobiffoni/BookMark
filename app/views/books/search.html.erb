@@ -1,10 +1,9 @@
 
 
 <div class="full_page">
-  <h1>Campi Ricerca</h1>
-      <tbody>
-    	<%= form_tag(books_path,method: :get) do %>
-  	<%= text_field_tag :book %>
-  	<%= submit_tag 'Search' %>
-  </tbody>
-    <% end %>
+  <h1>Ricerca</h1>
+  <%= form_tag(books_path,method: :get) do %>
+    <%= text_field_tag :book %>
+    <%= submit_tag 'Cerca', class: "btn btn-primary" %>
+  <% end %>
+</div>

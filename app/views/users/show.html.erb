@@ -2,6 +2,15 @@
   <h1><%= @user.name.upcase %></h1>
   <% if @user.has_role?(:writer) %>
     <h2>SCRITTORE</h2>
+    <% if current_user.has_role?(:publisher) %>
+      <% if current_user.writers && current_user.writers.include?(@user) %>
+        <%= link_to 'Rimuovi dai tuoi scrittori', users_remove_writer_path(writer_to_remove: @user), class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to 'Aggiungi ai tuoi scrittori', users_add_writer_path(writer_to_add: @user), class: "btn btn-primary" %>
+      <% end %>
+      <br />
+      <br />
+    <% end %>
     <div class="bio_section">
       <p class="profile_label">INFORMAZIONI PERSONALI</p>
       <% if !@user.bio || @user.bio.empty? %>
@@ -58,6 +67,26 @@
       <% else %>
         <p style="font-size: 1.3em; padding-top: 20px;"><%= @user.head_office %></p>
       <% end %>
+    </div>
+    <div class="publisher_writers_section">
+      <p class="profile_label">SCRITTORI PUBBLICATI</p>
+      <% if !@user.writers || @user.writers.length == 0 %>
+        <p style="font-size: 1.3em;">Non pubblica ancora nessuno scrittore!</p>
+      <% else %>
+        <table>
+          <tbody>
+            <% @user.writers.each do |writer| %>
+              <tr>
+                <td><%= writer.name %></td>
+                <% if current_user == @user %>
+                  <td><%= link_to 'Rimuovi', users_remove_writer_path(writer_to_remove: writer) %></td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+      <p style="font-size: 1.3em padding-top: 20px;">Per aggiungere gli scrittori, visita i loro profili</p>
     </div>
   <% end %>
   <% if !@user.has_role?(:publisher) %>
