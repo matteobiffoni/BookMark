@@ -1,9 +1,6 @@
-
-
 <div class="full_page">
-  <h1>Ricerca</h1>
-  <%= form_tag(books_path,method: :get) do %>
-    <%= text_field_tag :book %>
+  <%= form_tag(books_path, method: :get, id: "research_books_form") do %>
+    <%= text_field_tag :book, nil, placeholder: 'Titolo', id: "research_books_input" %>
     <%= submit_tag 'Cerca', class: "btn btn-primary" %>
   <% end %>
 </div>

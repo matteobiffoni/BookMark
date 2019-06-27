@@ -222,7 +222,9 @@ p {
   line-height: 1.7em;
 }
 /* header */
-
+.head_office_section {
+  margin-bottom: 15px;
+}
 #logo {
   float: left;
   margin-right: 10px;
@@ -262,4 +264,24 @@ p {
 }
 .inline-divs {
   display: inline-block;
+}
+#research_users_input {
+  width: 400px;
+}
+#research_books_input {
+  width: 40%;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.7em;
+}
+#research_books_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  .btn {
+    font-size: 1.4em;
+  }
 }

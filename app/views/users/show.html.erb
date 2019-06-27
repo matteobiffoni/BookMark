@@ -1,7 +1,7 @@
 <div class="full_page">
   <h1><%= @user.name.upcase %></h1>
   <% if @user.has_role?(:writer) %>
-    <h2>SCRITTORE</h2>
+    <h2>SCRITTORE/SCRITTRICE</h2>
     <% if current_user.has_role?(:publisher) %>
       <% if current_user.writers && current_user.writers.include?(@user) %>
         <%= link_to 'Rimuovi dai tuoi scrittori', users_remove_writer_path(writer_to_remove: @user), class: "btn btn-primary" %>
@@ -54,6 +54,9 @@
       <% else %>
         <p style="font-size: 1.3em;">Non ha ancora pubblicato libri!</p>
       <% end %>
+      <% if @user == current_user %>
+        <%= link_to 'Pubblica un libro', new_book_path, class: "btn btn-primary" %>
+      <% end %>
     </div>
   <% elsif @user.has_role?(:publisher) %>
     <h2>CASA EDITRICE</h2>
@@ -90,6 +93,8 @@
         <p style="font-size: 1.3em padding-top: 20px;">Per aggiungere gli scrittori, visita i loro profili</p>
       <% end %>
     </div>
+  <% else %>
+    <h2>LETTORE/LETTRICE</h2>
   <% end %>
   <% if !@user.has_role?(:publisher) %>
     <div class="preferred_books">
@@ -125,6 +130,9 @@
         </table>
       <% else %>
         <p style="font-size: 1.3em;">Non ha ancora scelto i suoi libri preferiti!</p>
+      <% end %>
+      <% if current_user == @user %>
+        <p style="margin-bottom: 60px;"><%= link_to 'Vai a LIBRI', books_path, class: "btn btn-primary" %></p>
       <% end %>
     </div>
   <% end %>

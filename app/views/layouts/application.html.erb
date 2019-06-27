@@ -19,7 +19,7 @@
             <div class="dropdown pull-right right-nav inline-divs">
               <div class="inline-divs">
                 <%= form_tag(users_path, method: :get) do%>
-                  <%= text_field_tag :user%>
+                  <%= text_field_tag :user, nil, placeholder: 'Lettori, Scrittori, Case Editrici', id: "research_users_input"%>
                   <%= submit_tag 'Cerca', class: "btn btn-primary"  %>
                 <% end %>
               </div>

@@ -6,6 +6,8 @@
   <% end %>
   <% if Book.count > 0 %>
     <%= link_to 'Ricerca un libro', books_search_path, class: "btn btn-primary", id: "book_search"%>
+  <% end %>
+  <% if @books.length > 0 %>
     <table>
       <thead>
         <tr>
@@ -36,6 +38,10 @@
       </tbody>
     </table>
   <% else %>
-    <h2>Non sono presenti libri al momento!</h2>
+    <% if Book.count == 0 %>
+      <h2>Non sono presenti libri al momento!</h2>
+    <% else %>
+      <h2>Nessun libro corrisponde ai criteri di ricerca</h2>
+    <% end %>
   <% end %>
 </div>

@@ -13,24 +13,28 @@
 
   <div class="field">
     <%= form.label :title, "Titolo" %>
+    (minimo 2 caratteri, massimo 30)
     <br />
     <%= form.text_field :title, class: "text_field" %>
   </div>
 
   <div class="field">
     <%= form.label :genre, "Genere" %>
+    (minimo 3 caratteri, massimo 30)
     <br />
     <%= form.text_field :genre, class: "text_field" %>
   </div>
 
   <div class="field">
     <%= form.label :plot, "Trama" %>
+    (minimo 10 caratteri, massimo 8000)
     <br />
     <%= form.text_area :plot, rows: "8" %>
   </div>
 
   <div class="field">
     <%= form.label :year, "Anno di pubblicazione" %>
+    (dal 1900 a oggi)
     <br />
     <%= form.text_field :year %>
   </div>

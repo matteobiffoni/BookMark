@@ -21,8 +21,8 @@ class User < ApplicationRecord
   private
     def add_user_role
       role = self.user_role
-      return if role == "Lettore"
-      if role == "Scrittore"
+      return if role == "Lettore/Lettrice"
+      if role == "Scrittore/Scrittrice"
         role = "writer"
       elsif role == "Casa Editrice"
         role = "publisher"
