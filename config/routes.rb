@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'users/add_writer'
   get 'users/remove_writer'
   resources :books
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, :only => [:index, :show, :add_to_fav, :remove_from_fav, :add_writer, :remove_writer]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "home#index"
