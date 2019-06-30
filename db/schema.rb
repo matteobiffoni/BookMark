@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_29_142334) do
+ActiveRecord::Schema.define(version: 2019_06_26_104604) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -56,8 +56,6 @@ ActiveRecord::Schema.define(version: 2019_06_29_142334) do
     t.string "head_office"
     t.text "bio"
     t.integer "publisher_id"
-    t.string "provider"
-    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["publisher_id"], name: "index_users_on_publisher_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

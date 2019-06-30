@@ -18,10 +18,8 @@
   <%= link_to "Non hai ricevuto le istruzioni per lo sblocco?", new_unlock_path(resource_name), id: "link" %><br />
 <% end %>
 
-<%- if false %>
-  <%- if devise_mapping.omniauthable? %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Accedi con #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), id: "link" %><br />
-    <% end %>
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Accedi con #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), id: "link" %><br />
   <% end %>
 <% end %>
