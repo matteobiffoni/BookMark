@@ -16,5 +16,7 @@
     <%= link_to "Registrati", new_user_registration_path, class: "btn btn-lg btn-primary", id: "button"%>
     <br/>
     <%= link_to "Accedi", new_user_session_path, class: "btn btn-lg btn-primary", id: "button"%>
+    <br/>
+    <%= link_to "Accedi con Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-lg btn-primary", id: "button" %>
   <% end %>
 </div>
