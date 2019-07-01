@@ -7,7 +7,7 @@
   <% if @book.writer %>
     <% if @book.writer == current_user %>
       <p>
-        <%= social_share_button_tag("#{@book.title}", :allow_sites => %w(facebook), desc: "Ho appena aggiunto un libro su BookMark: #{raw @book.title.html_safe}") %>
+        <%= social_share_button_tag("#{@book.title}", :allow_sites => %w(facebook), desc: "Ho appena aggiunto un libro su BookMark: #{@book.title}") %>
       </p>
     <% end %>
 
