@@ -7,7 +7,7 @@
   <% if @book.writer %>
     <% if @book.writer == current_user %>
       <p>
-        <%= link_to 'Condividi su Facebook', "http://www.facebook.com/dialog/feed?app_id=" + ENV["FACEBOOK_APP_ID"] + "&link=http://localhost:3000/#{@book.id}/#{@book.title}&name=#{@book.title}&caption=#{@book.writer.name}&description=#{@book.title}&redirect_uri=http://localhost:3000/#{request.original_url}&display=popup" %>
+        <%= link_to 'Condividi su Facebook', "http://www.facebook.com/dialog/feed?app_id=" + ENV["FACEBOOK_APP_ID"] + "&link=https://bookmark-lassi.herokuapp.com/books/#{@book.id}/#{@book.title}&name=#{@book.title}&caption=#{@book.writer.name}&description=#{@book.title}&redirect_uri=http://localhost:3000/#{request.original_url}&display=popup" %>
       </p>
     <% end %>
 
