@@ -9,7 +9,7 @@ class Book < ApplicationRecord
   def validate_year
     current_year = Date.today.year
     if year && (year.to_i < 1900 || year.to_i > current_year)
-      errors.add(:year, "must be valid")
+      errors.add(:year, "deve essere valido")
     end
   end
 end

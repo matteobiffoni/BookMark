@@ -23,7 +23,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :email %><br />
+      <%= f.label :email, "Email" %><br />
       <%= f.email_field :email, autocomplete: "email" %>
     </div>
 
@@ -32,7 +32,7 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :password %> <i>(lascia il campo vuoto se non intendi cambiare la password)</i><br />
+      <%= f.label :password, "Password" %> <i>(lascia il campo vuoto se non intendi cambiare la password)</i><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
       <% if @minimum_password_length %>
         <br />
