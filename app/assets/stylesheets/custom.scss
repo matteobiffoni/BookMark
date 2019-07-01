@@ -1,8 +1,17 @@
-
+@import "social-share-button";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 $white_slightly_transparent: rgba(255, 255, 255, 0.8);
 $black_slightly_transparent: rgba(0, 0, 0, 0.6);
+$size: 32px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
 /*universal*/
 body {
   background-image: image_url("background.jpeg");

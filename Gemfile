@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'omniauth-facebook'
 gem 'rails-i18n'
 gem 'figaro'
+gem 'social-share-button'
 #END
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
