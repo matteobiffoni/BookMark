@@ -1,4 +1,6 @@
 <div class="full_page">
   <h1 class="center_h1">LIBRO AGGIUNTO AI PREFERITI</h1>
+  <% @prov_user = current_user %>
+  <%= social_share_button_tag("#{@prov_user.name}", :allow_sites => %w(facebook), desc: "Ho appena aggiunto un libro ai preferiti su BookMark, vieni a vedere quali libri ho scelto!"), :url => @prov_user %>
   <%= link_to 'Indietro', :back, id: "back_fav_info" %>
 </div>
