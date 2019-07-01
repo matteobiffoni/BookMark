@@ -4,9 +4,17 @@
     <strong style="font-size: 3em;"><%= @book.title %></strong>
   </p>
 
-  <p>
-    <h2>Autore: <%= @book.writer.name %></h2>
-  <p>
+  <% if @book.writer %>
+    <% if @book.writer == current_user %>
+      <p>
+        <%= link_to 'Condividi su Facebook', "http://www.facebook.com/dialog/feed?app_id="+"&link=http://localhost:3000/#{@book.id}/#{@book.title}&name=#{@book.title}&caption=#{@book.writer.name}&description=#{@book.title}&redirect_uri=http://localhost:3000/#{request.original_url}&display=popup" %>
+      </p>
+    <% end %>
+
+    <p>
+      <h2>Autore: <%= link_to "#{@book.writer.name}", user_url(id: @book.writer.id) %></h2>
+    </p>
+  <% end %>
     <h2>Genere: <%= @book.genre %></h2>
   </p>
 
@@ -27,7 +35,7 @@
   <br />
   <br />
   <br />
-  <% if @book.writer == current_user %>
+  <% if @book.writer && @book.writer == current_user %>
     <%= link_to 'Modifica', edit_book_path(@book), id: "book_button_s" %> |
   <% end %>
   <%= link_to 'Vai a LIBRI', books_path, id: "book_button_s"%>

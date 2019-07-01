@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  validates :title, length: { minimum: 2, maximum: 30 }
+  validates :title, length: { minimum: 2, maximum: 50 }
   validates :genre, length: { minimum: 3, maximum: 30 }
   validates :plot, length: { minimum: 10, maximum: 8000 }
   validate :validate_year
@@ -8,7 +8,7 @@ class Book < ApplicationRecord
   resourcify
   def validate_year
     current_year = Date.today.year
-    if year && (year.to_i < 1900 || year.to_i >= current_year)
+    if year && (year.to_i < 1900 || year.to_i > current_year)
       errors.add(:year, "must be valid")
     end
   end

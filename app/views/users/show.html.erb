@@ -80,7 +80,7 @@
           <tbody>
             <% @user.writers.each do |writer| %>
               <tr>
-                <td><%= writer.name %></td>
+                <td><%= link_to "#{writer.name}", user_url(id: writer.id) %></td>
                 <% if current_user == @user %>
                   <td><%= link_to 'Rimuovi', users_remove_writer_path(writer_to_remove: writer) %></td>
                 <% end %>
@@ -115,12 +115,16 @@
             <% @user.books.each do |book| %>
               <tr>
                 <td><%= book.title %></td>
-                <td><%= book.writer.name %></td>
+                <% if book.writer %>
+                  <td><%= link_to "#{book.writer.name}", user_url(id: book.writer.id) %></td>
+                <% else %>
+                  <td>/</td>
+                <% end %>
                 <td><%= book.genre %></td>
                 <td><%= truncate(book.plot, length: 300) %></td>
                 <td><%= book.year %></td>
                 <td><%= link_to 'Mostra', book, id: "book_button" %></td>
-                <% if current_user == book.writer %>
+                <% if book.writer && current_user == book.writer %>
                   <td><%= link_to 'Modifica', edit_book_path(book), id: "book_button" %></td>
                   <td><%= link_to 'Elimina', book, method: :delete, data: { confirm: 'Sei sicuro?' }, id: "book_button" %></td>
                 <% end %>
