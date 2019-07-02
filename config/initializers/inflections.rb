@@ -16,4 +16,5 @@
 # end
 ActiveSupport::Inflector.inflections(:it) do |inflect|
   inflect.plural 'errore', 'errori'
+  inflect.plural 'ha', 'hanno'
 end

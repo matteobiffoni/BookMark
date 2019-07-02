@@ -14,6 +14,7 @@
           <th>Titolo</th>
           <th>Autore</th>
           <th>Genere</th>
+          <th>Link Amazon</th>
           <th>Trama</th>
           <th>Anno di pubblicazione</th>
           <th colspan="3"></th>
@@ -30,6 +31,7 @@
               <td>/</td>
             <% end %>
             <td><%= book.genre %></td>
+            <td><%= link_to "#{truncate(book.amazon, length: 20)}", book.amazon %></td>
             <td><%= truncate(book.plot, length: 300) %></td>
             <td><%= book.year %></td>
             <td><%= link_to 'Mostra', book, id: "book_button" %></td>

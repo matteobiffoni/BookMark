@@ -22,6 +22,7 @@ it:
         genre: "Il campo \"Genere\""
         plot: "Il campo \"Trama\""
         year: "Il campo \"Anno di pubblicazione\""
+        amazon: "Il campo \"Link Amazon\""
   errors:
     messages:
       blank: "non può essere lasciato in bianco"
