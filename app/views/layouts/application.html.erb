@@ -12,7 +12,6 @@
 
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
         <nav>
           <%= link_to "BookMark", root_path, id: "logo" %>
           <% if current_user %>
@@ -23,7 +22,7 @@
                   <%= submit_tag 'Cerca', class: "btn btn-primary"  %>
                 <% end %>
               </div>
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="background-color: transparent; color: #fff; margin-left: 150px;">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="background-color: transparent; color: #fff; margin-left: 50px; margin-right: 40px;">
                 <%= current_user.name.upcase %>
                 <span class="caret"/>
               </button>
@@ -35,7 +34,6 @@
             </div>
           <% end %>
         </nav>
-      </div>
     </header>
     <%= render 'shared/flashmessages' %>
     <%= yield %>
