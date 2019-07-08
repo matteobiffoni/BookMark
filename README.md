@@ -1,24 +1,28 @@
-# README
+<b>BOOKMARK</b>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project for Laboratorio di Applicazioni Software e Sicurezza Informatica
+Sapienza, Roma
 
-Things you may want to cover:
+SETUP<br/>
+Move to the directory where you want "BookMark" to be installed.
+<br/>
+`git clone https://github.com/matteobiffoni/BookMark.git`
+<br/>
+`cd BookMark`
+<br/>
+`bundle install --without production`
+<br/>
+`rails db:migrate`
+<br/>
 
-* Ruby version
 
-* System dependencies
+USAGE<br/>
+Move toto the directory where "BookMark" is installed.
+<br/>
+`rails s`
 
-* Configuration
+<br/>
+Open a browser and navigate to "http://localhost:3000/"
 
-* Database creation
+Enjoy!
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
