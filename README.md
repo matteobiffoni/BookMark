@@ -17,7 +17,7 @@ Move to the directory where you want "BookMark" to be installed.
 
 
 USAGE<br/>
-Move toto the directory where "BookMark" is installed.
+Move to the directory where "BookMark" is installed.
 <br/>
 `rails s`
 
